@@ -1,0 +1,37 @@
+--Create a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "melons", "produce", 2.99, 50);
+INSERT INTO store VALUES (2, "bananas", "produce",0.99, 95);
+INSERT INTO store VALUES (3, "oranges", "produce", 1.99, 55);
+INSERT INTO store VALUES (4, "beans","bulk", 1.99, 50);
+INSERT INTO store VALUES (5, "chicken patty","meat", 3.99, 65);
+INSERT INTO store VALUES (6, "salsa", "fresh", 3.25, 43);
+INSERT INTO store VALUES (7, "hummus", "fresh", 2.99, 35);
+INSERT INTO store VALUES (8, "shampoo", "hygiene", 1.99, 50);
+INSERT INTO store VALUES (9, "soap", "hygiene ", 3.99, 75);
+INSERT INTO store VALUES (10, "corn", "frozen", 1.99, 25);
+INSERT INTO store VALUES (11, "blue berries", "frozen", 5.99, 33);
+INSERT INTO store VALUES (12, "cereal", "bulk", 1.99, 80);
+INSERT INTO store VALUES (13, "Vitamin A", "health", 9.99, 29);
+INSERT INTO store VALUES (14, "oatmeal", "grains", 2.99, 26);
+INSERT INTO store VALUES (15, "graham crackers", "snacks", 1.99, 47);
+
+--display the database order by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--what is the avg price of items in the bulk section?
+SELECT AVG(price) "avg bulk item price"
+FROM store
+where section= 'bulk';
+
+--what are the most popular items?
+SELECT item, price, popularity
+FROM store
+order by popularity desc
+limit 5;
+
+
+
